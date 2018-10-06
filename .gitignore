@@ -1,0 +1,58 @@
+### Language and frameworks ###
+
+# Basics
+*.py[cod]
+__pycache__
+
+# Patches
+*.patch
+
+# Logs
+*.log
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# Translations
+*.mo
+*.pot
+
+.cache/
+
+### Text Editors and IDEs
+# Pycharm
+.idea
+
+# Vim
+*~
+*.swp
+*.swo
+
+# VisualStudioCode
+.vscode/
+
+# Ignore tags created by etags, ctags, gtags (GNU global) and cscope
+TAGS
+.TAGS
+!TAGS/
+tags
+.tags
+!tags/
+gtags.files
+GTAGS
+GRTAGS
+GPATH
+GSYMS
+cscope.files
+cscope.out
+cscope.in.out
+cscope.po.out
+
+# Ignore Codeship relevant config files
+codeship.aes
+*.env
+
+staticfiles
