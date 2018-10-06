@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  django_drf:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: ["/app/scripts/start_server.sh"]
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
