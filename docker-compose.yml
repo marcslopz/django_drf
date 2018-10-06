@@ -6,6 +6,8 @@ services:
       context: .
       dockerfile: ./Dockerfile
     command: ["/app/scripts/start_server.sh"]
+    environment:
+      - DJANGO_SETTINGS_MODULE=django_drf.settings
     volumes:
       - .:/app
     ports:

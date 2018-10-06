@@ -6,13 +6,13 @@ from blog.models import (
 )
 
 
-class PostSerializer(serializers.HyperlinkedModelSerializer):
+class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ('title', 'content', 'author', 'tags')
+        fields = ('id', 'title', 'content', 'author', 'tags')
 
 
-class TagSerializer(serializers.HyperlinkedModelSerializer):
+class TagSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tag
-        fields = 'name'
+        fields = ('id', 'name', 'description')
