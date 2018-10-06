@@ -22,6 +22,9 @@ nosetests.xml
 
 .cache/
 
+# sqlitedb
+*/db.sqlite3
+
 ### Text Editors and IDEs
 # Pycharm
 .idea
