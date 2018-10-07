@@ -14,7 +14,7 @@ docker-compose up
 
 To create admin user
 ```
-docker-compose run django_drf django_drf/manage.py createsuperuser --email email@example.com --username admin_username
+docker-compose run django_drf django_drf/manage.py createsuperuser --email email@example.com --username admin
 ```
 
 To run tests:

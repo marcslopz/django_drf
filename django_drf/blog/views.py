@@ -26,11 +26,21 @@ class PostViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly, IsAuthorOrReadOnly)
     template_name = None
 
+    def _is_rendered(self):
+        return bool(self.request.query_params.get('render'))
+
     def get_renderers(self):
-        if self.request.query_params.get('render'):
+        if self._is_rendered():
             return [TemplateHTMLRenderer()]
         else:
             return super(PostViewSet, self).get_renderers()
+
+    def get_serializer_class(self):
+        if self._is_rendered():
+            self.serializer_class = PostSerializerWithDatetime
+        else:
+            self.serializer_class = PostSerializer
+        return self.serializer_class
 
     def list(self, request, *args, **kwargs):
         self.template_name = 'list.html'
