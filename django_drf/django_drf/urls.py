@@ -22,6 +22,8 @@ from users.urls import users_router
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
+    # ModelViewSets
     url(r'^', include(users_router.urls)),
     url(r'^', include(blog_router.urls)),
 ]

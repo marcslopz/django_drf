@@ -6,10 +6,21 @@ from blog.models import (
 )
 
 
+class PostSerializerWithDatetime(serializers.ModelSerializer):
+    # to use django template filter `date`
+    created = serializers.DateTimeField(format=None)
+
+    class Meta:
+        model = Post
+        fields = ('id', 'title', 'content', 'author', 'tags', 'created', 'modified')
+        # get author fields from this model
+        depth = 1
+
+
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ('id', 'title', 'content', 'author', 'tags')
+        fields = ('id', 'title', 'content', 'author', 'tags', 'created', 'modified')
 
 
 class TagSerializer(serializers.ModelSerializer):

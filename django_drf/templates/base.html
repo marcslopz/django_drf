@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    {% block meta %}
+        {% include "components/meta.html" %}
+    {% endblock meta %}
+
+    <title>DRF Blog playground</title>
+
+    {% block css %}
+        {% include "components/css.html" %}
+    {% endblock css %}
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    {% block navigation %}
+        {% include "components/navigation.html" %}
+    {% endblock navigation %}
+
+    <!-- Page Header -->
+    {% block header %}
+        {% include "components/header.html" %}
+    {% endblock header %}
+
+    <!-- Main Content -->
+    {% block main_content %}
+            <!-- Main Content HERE -->
+    {% endblock main_content %}
+
+
+    <hr>
+
+    <!-- Footer -->
+    {% block footer %}
+        {% include "components/footer.html" %}
+    {% endblock footer %}
+
+    {% block js %}
+        {% include "components/js.html" %}
+    {% endblock js %}
+
+  </body>
+
+</html>

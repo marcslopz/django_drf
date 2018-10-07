@@ -42,7 +42,7 @@ def _test_get_list(test_case):
 
     content = json.loads(response.content)
 
-    test_case.assertEqual(test_case.initial_instance_count, len(content))
+    test_case.assertEqual(test_case.initial_instance_count, content['count'])
 
 
 def _get_instance_by_id(test_case, instance_id):
