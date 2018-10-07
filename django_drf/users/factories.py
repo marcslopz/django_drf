@@ -3,7 +3,7 @@ import string
 
 import factory
 from faker import Factory as Fake
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 
 
 faker = Fake.create()
@@ -22,6 +22,10 @@ def random_username():
     return faker.user_name() + "_" + rand_string()
 
 
+def random_groupname():
+    return faker.group_name() + "_" + rand_string()
+
+
 class UserFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = User
@@ -30,3 +34,10 @@ class UserFactory(factory.django.DjangoModelFactory):
     first_name = factory.LazyAttribute(lambda o: faker.first_name())
     last_name = factory.LazyAttribute(lambda o: faker.last_name())
     email = factory.LazyAttribute(lambda o: random_email())
+
+
+class GroupFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = Group
+
+    name = factory.LazyAttribute(lambda o: random_groupname())
